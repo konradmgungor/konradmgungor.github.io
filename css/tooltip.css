@@ -1,0 +1,144 @@
+@import url(http://fonts.googleapis.com/css?family=Gochi+Hand);
+.tooltips {
+	position: absolute;
+	z-index: 999;
+	width: 2.2em;
+	height: 2.2em;
+	cursor: pointer;
+}
+
+/* Trigger item */
+
+.tooltip-item {
+	width: 30px;
+	height: 30px;
+	left: 50%;
+	top: 50%;
+	margin: -15px 0 0 -15px;
+	background-color: rgba(255,255,255,.5);
+	position: absolute;
+	border-radius: 50%;
+	border: 2px solid #ffffff;
+	-webkit-animation: pulse 0.6s infinite alternate;
+	animation: pulse 0.6s infinite alternate;
+}
+
+@-webkit-keyframes pulse {
+	from { -webkit-transform: scale3d(0.3,0.3,1); transform: scale3d(0.3,0.3,1);}
+	to { -webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1);}
+}
+
+@keyframes pulse {
+	from { -webkit-transform: scale3d(0.3,0.3,1); transform: scale3d(0.3,0.3,1); }
+	to { -webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); }
+}
+
+.tooltips:hover .tooltip-item {
+	border-color: #fff;
+}
+
+.tooltips:first-child {
+	top: 0;
+	left: 47%;
+}
+
+.tooltips:nth-child(2) {
+	top: 50%;
+	left: 5%;
+}
+
+.tooltips:nth-child(3) {
+	top: 73%;
+	left: 80%;
+}
+
+.tooltips:nth-child(4) {
+	top: 45%;
+	left: 90%;
+}
+
+/* Tooltip */
+
+.tooltip-content {
+	position: absolute;
+	background: rgba(255,255,255, 0.92);
+	z-index: 9999;
+	width: 200px;
+	bottom: 50%;
+	margin-bottom: -1em;
+	padding: 15px;
+	border-radius: 15px;
+	font-size: 1em;
+	color: #2d3e50;
+	opacity: 0;
+	cursor: default;
+	pointer-events: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	overflow: visible;
+	-webkit-box-shadow: 3px 3px 0px 1px rgba(0,0,0,0.1);
+	-moz-box-shadow: 3px 3px 0px 1px rgba(0,0,0,0.1);
+	box-shadow: 3px 3px 0px 1px rgba(0,0,0,0.1);
+}
+
+.tooltip-west .tooltip-content {
+	left: 4em;
+	-webkit-transform-origin: -2em 50%;
+	transform-origin: -2em 50%;
+	-webkit-transform: translate3d(0,50%,0) translate3d(0,0,-1);
+	transform: translate3d(0,50%,0) translate3d(0,0,-1);
+}
+
+.tooltip-east .tooltip-content {
+	right: 4em;
+	-webkit-transform-origin: calc(100% + 2em) 50%;
+	transform-origin: calc(100% + 2em) 50%;
+	-webkit-transform: translate3d(0,50%,0) translate3d(0,0,1);
+	transform: translate3d(0,50%,0) translate3d(0,0,1) ;
+}
+
+.tooltips:hover .tooltip-content {
+	opacity: 1;
+	-webkit-transform: translate3d(0,50%,0) rotate3d(0,0,0,0);
+	transform: translate3d(0,50%,0) rotate3d(0,0,0,0);
+	pointer-events: auto;
+}
+
+/* Gap "bridge" and arrow */
+
+.tooltip-content::before,
+.tooltip-content::after {
+	content: '';
+	position: absolute;
+}
+
+.tooltip-content::before {
+	height: 100%;
+	width: 3em;
+}
+
+.tooltip-content::after {
+	width: 1.4em;
+	height: 1.4em;
+	top: 50%;
+	margin: -1em 0 0;
+	opacity: .92;
+	background: url(../img/tooltip2.svg) no-repeat center center;
+	background-size: 100%;
+}
+
+.tooltip-west .tooltip-content::before,
+.tooltip-west .tooltip-content::after {
+	right: 100%; /* because of FF, otherwise we have a gap */
+}
+
+.tooltip-east .tooltip-content::before,
+.tooltip-east .tooltip-content::after {
+	left: 100%; /* because of FF, otherwise we have a gap */
+}
+
+.tooltip-east .tooltip-content::after {
+	-webkit-transform: scale3d(-1,1,1);
+	transform: scale3d(-1,1,1);
+}
