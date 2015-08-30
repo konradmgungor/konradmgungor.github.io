@@ -60,12 +60,12 @@
             <div class="ContentFlow" id="ContentFlow">
             <div class="loadIndicator"><div class="indicator"></div></div>
             <div class="flow">
-                <img class="item" src="img/phone.png" title="Your_Image_Title"/>
                 <img class="item" href="#sanfran" src="img/phone2.png" title="Your_Image_Title"/>
                 <img class="item" href="#craigslist" src="img/phone1.png" title="Your_Image_Title"/>
+                <img class="item" href="#cb" src="img/phone6.png" title="Your_Image_Title"/>
                 <img class="item" href="#icp" src="img/phone3.png" title="Your_Image_Title"/>
                 <img class="item" href="#rw" src="img/phone.png" title="Your_Image_Title"/>
-                <img class="item" src="img/phone.png" title="Your_Image_Title"/>
+                
                 <!-- Add as many items as you like. -->
             </div>
             
@@ -142,11 +142,14 @@
   </div>
   </div>
 
+  
+
   <div id ="icp" class="row testmodal">
   <a href="#close" title="Close" class="close">x</a>
-  <div class="large-12 columns">
-    <div class="row testmodal2">
-      <div class="large-5 columns work-info">
+  <div class="large-12 columns modal-container">
+    <div class="row">
+      <div class="large-7 columns work-content"><img src="img/ic3.jpg"/></div>
+      <div class="large-5 columns work-info testmodal2">
        <h3>Craigslist Reimagined</h3>
        <p>To display wire frame process and mock-up techniques, I've redesigned the craigslist app.</p>
        <hr>
@@ -157,7 +160,26 @@
         <li><p> Product Design</p></li>
         <li><p> Product Design</p></li>
       </div>
-      <div class="large-7 columns work-content"><img src="img/ic3.jpg"/></div>
+    </div>
+  </div>
+  </div>
+
+  <div id ="cb" class="row testmodal">
+  <a href="#close" title="Close" class="close">x</a>
+  <div class="large-12 columns modal-container">
+    <div class="row">
+      <div class="large-7 columns work-content"><img src="img/charitywork.jpg"/></div>
+      <div class="large-5 columns work-info testmodal2">
+       <h3>Craigslist Reimagined</h3>
+       <p>To display wire frame process and mock-up techniques, I've redesigned the craigslist app.</p>
+       <hr>
+       <div class="labels-wrap"><span class="labels">What I did</span></div>
+       <ul>
+        <li><p> Product Design</p></li>
+        <li><p> UI/UX Design</p></li>
+        <li><p> Product Design</p></li>
+        <li><p> Product Design</p></li>
+      </div>
     </div>
   </div>
   </div>
@@ -257,7 +279,7 @@ $(document).ready(function(){
 $('#cl').click(function() {
   $("#craigslist").fadeIn("fast");
   $(".testmodal2").fadeIn();
-  classie.add(document.body ,'noscroll');
+  $("body").addClass("modal-open");
 });
 
 </script>
@@ -265,6 +287,15 @@ $('#cl').click(function() {
 <script>
 $('#sf').click(function() {
   $("#sanfran").fadeIn("fast");
+  $(".testmodal2").fadeIn();
+  classie.add(document.body ,'noscroll');
+});
+
+</script>
+
+<script>
+$('#sf').click(function() {
+  $("#cb").fadeIn("fast");
   $(".testmodal2").fadeIn();
   classie.add(document.body ,'noscroll');
 });
@@ -279,5 +310,12 @@ $('#sf').click(function() {
 
         </script>
 
+<script type="text/javascript">
+  $(".item").click(function () {
+  $("body").addClass("modal-open");
+}).on("hidden", function () {
+  $("body").removeClass("modal-open")
+});
+</script>
   </body>
 </html>
