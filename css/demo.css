@@ -509,7 +509,15 @@ a:hover, a:focus {
   transform: translateY(-8px);
 }
 
-
+.contact{
+	margin:auto;
+	border-radius: 10px;
+	background-color: #fff;
+	color: #00aedf;
+	margin-bottom:4rem;
+	padding:20px 45px;
+	font-family: "Boldfont";
+}
 
 /*modals*/
 
@@ -565,6 +573,7 @@ a:hover, a:focus {
 	max-width: 101%;
 	margin-top: 3rem;
 	border-radius: 10px;
+	float: right;
 }
 
 .work-info{
@@ -588,6 +597,17 @@ a:hover, a:focus {
 	margin-bottom: .5rem;
 }
 
+.work-info a{
+	color: #137895;
+	font-size: .9rem;
+	font-weight: 300;
+	margin-bottom: .5rem;
+}
+
+.work-info a:hover{
+	color: #e64c66;
+}
+
 .work-info ul{
 	list-style: none;
 }
@@ -607,9 +627,9 @@ a:hover, a:focus {
 
 .labels{
 	font-family: 'Raleway';
+	font-weight: 100;
 	font-size: .8rem;
 	color: #565656;
-	text-transform: uppercase;
 }
 
 .labels-wrap{
@@ -628,10 +648,9 @@ a:hover, a:focus {
     z-index: 1020;
 }
 .close:hover {
-    background: #00d9ff;
+    color: #00d9ff;
 }
 
-}
 
 .coverflow {
 				height: 100px;
