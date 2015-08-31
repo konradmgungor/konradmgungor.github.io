@@ -513,10 +513,15 @@ a:hover, a:focus {
 	margin:auto;
 	border-radius: 10px;
 	background-color: #fff;
-	color: #00aedf;
+	color: #565656;
 	margin-bottom:4rem;
 	padding:20px 45px;
 	font-family: "Boldfont";
+}
+
+.contact:hover{
+	color:#e64c66;
+	background-color: #fff;
 }
 
 /*modals*/
